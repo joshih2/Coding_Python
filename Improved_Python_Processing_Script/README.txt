@@ -1,13 +1,22 @@
 Proteomics Data Processing Pipeline
 ===================================
 
+For more information about this project, please contact: 
+Dr. Amanda Pearce 
+Pearce Polymer Lab
+Loughborough University 
+Email: a.pearce@lboro.ac.uk
+
 This code has been adapted from the following code written by Dr. Jedd Bellamy-Carter - Loughborough University:
 https://github.com/jbellamycarter/DIA-Umpire_SearchGUI_automation
 
+This proteomics data processing pipeline was created as part of an MSc Data Science Project by:
+Hetal Joshi - Loughborough University
 
+===================================
 
-There is a folder called: Improved_Python_Processing_Script.
-It contains the directories, parameter files, python modules, __init__.py, main.py and README file. 
+In this project, there is a folder called Improved_Python_Processing_Script. 
+It contains the directories, parameter files, python modules, __init__.py, main.py, requirements.txt, __pycache__ and README file. 
 
 There are 8 modules which have been created and put into a package as seen in __init__.py file:
  - folder_structure.py
@@ -50,21 +59,17 @@ e.g. reference_name
 5. Ensure that the absolute filepath for the raw directory is used in main.py.   
 
 6. Run main.py in command prompt using the following Windows commands:
-   Copy and paste the current filepath of your current directory e.g. cd "C:\Users\yoshi\Documents\Project\Coding" 
+   Copy and paste the current filepath of your current directory e.g. cd "C:\Users\joshi\Documents\Project\Coding" 
    Then press Enter
    Activate the virtual environment by copying and pasting this command into the command prompt: .\venv\Scripts\Activate
    Then press Enter
-   Copy and paste the absolute filepath to where the modules are located e.g. cd "C:\Users\yoshi\Documents\Project\Coding\Improved_Python_Processing_Script"
+   Copy and paste the absolute filepath to where the modules are located e.g. cd "C:\Users\joshi\Documents\Project\Coding\Improved_Python_Processing_Script"
    Then press Enter
    Type in 'python main.py' and press enter; the script will be executed. 
 
 
-For more information about this project, please contact: 
 
-Dr. Amanda Pearce 
-Pearce Polymer Lab
-Loughborough University 
-Email: a.pearce@lboro.ac.uk
+
 
 
 

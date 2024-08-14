@@ -1,7 +1,7 @@
 ###########################
 # F333290 - H.Joshi        #
 # Date Created: 14/06/2024 #
-# Last Updated: 25/07/2024 #
+# Last Updated: 14/08/2024 #
 ###########################
 
 '''
@@ -157,9 +157,9 @@ class FolderStructure:
 
         # Setting up the logging format for both the DIA_log_file and the console         
         logging.basicConfig(
-            level=logging.INFO,
-            format="%(levelname)-8s %(message)s",
-            handlers=[
+            level = logging.INFO,
+            format = "%(levelname)-8s %(message)s",
+            handlers = [ 
                 logging.FileHandler(log_file),
                 logging.StreamHandler(sys.stdout)
             ]

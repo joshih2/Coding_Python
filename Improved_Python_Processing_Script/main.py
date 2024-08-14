@@ -1,7 +1,7 @@
 ###########################
 # F333290 - H.Joshi        #
 # Date Created: 11/07/2024 #
-# Last Updated: 28/07/2024 #
+# Last Updated: 14/08/2024 #
 ###########################
 
 '''
@@ -191,7 +191,7 @@ class Summary:
             # Date & Timestamp of the process for user reference 
             script_end_time = time.time()
             total_time = script_end_time - self.folder_structure.script_start_time
-            logging.info(f"Total time taken for the whole process = {time.strftime('%M:%S', time.gmtime(total_time))} mins:seconds")
+            logging.info(f"Total time taken for the whole process = {time.strftime('%H:%M:%S', time.gmtime(total_time))} hours:mins:seconds")
             logging.info(f"Date & Time of when the process finished:{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(script_end_time))}")
            
            
@@ -240,7 +240,7 @@ def main():
     move_to_processed_module = move_to_processed.MoveOutputFiles(raw_dir,convert_raw_files_module)
     move_to_processed_module.move_to_processed()
     
-    # '.mgf' files are created which are used for SearchGUI protein database searching 
+    # '.mgf' files are concatenated with selected QT tier which are used for SearchGUI protein database searching 
     search_database_module = search_database.SearchDatabase(raw_dir, thermo_file_parser, reference_name)
     search_database_module.update_raw_names()
 
@@ -257,12 +257,12 @@ def main():
 
     # Initialising the Class Summary with instances of classes from some of the modules and the to_search list 
     summary = Summary(
-        folder_structure=folder_structure_module,
-        convert_raw_files=convert_raw_files_module,
-        dia_umpire=dia_umpire_module,
-        search_database=search_database_module,
-        prepare_peptideshaker=prepare_peptideshaker_module,
-        to_search=to_search,export_reports=export_reports_module
+        folder_structure = folder_structure_module,
+        convert_raw_files = convert_raw_files_module,
+        dia_umpire = dia_umpire_module,
+        search_database = search_database_module,
+        prepare_peptideshaker = prepare_peptideshaker_module,
+        to_search = to_search,export_reports = export_reports_module
     )
     
     # Logging the duration of some key processes in the workflow

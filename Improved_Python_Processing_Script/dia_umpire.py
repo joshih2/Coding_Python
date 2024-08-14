@@ -1,7 +1,7 @@
 ###########################
 # F333290 - H.Joshi        #
 # Date Created: 26/06/2024 #
-# Last Updated: 26/07/2024 #
+# Last Updated: 14/08/2024 #
 ###########################
 
 '''
@@ -147,7 +147,7 @@ class DiaUmpire:
         self.umpire_start_time = time.time()
 
         # For loop for iterating through each unique .mzML file for DIA Umpire processing 
-        for index, raw_file in enumerate(unique_raw_files, start=1):
+        for index, raw_file in enumerate(unique_raw_files, start = 1):
             logging.info(f"Processing {raw_file} ({index}/{len(unique_raw_files)}) with DIA Umpire...")
             _proc_time = time.time()
             
@@ -160,7 +160,7 @@ class DiaUmpire:
                     self.DIA_Umpire_Parameters
                 ]
                 
-                umpire_process = subprocess.run(umpire_command, capture_output=True, text=True, check=True)
+                umpire_process = subprocess.run(umpire_command, capture_output = True, text = True, check = True)
                 
                 # Renaming the DIA Umpire log file for each processed .mzML file
                 os.replace("./raw/diaumpire_se.log", f"./raw/{raw_file[:-5]}_diaumpire.log")

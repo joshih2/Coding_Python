@@ -1,7 +1,7 @@
 ###########################
 # F333290 - H.Joshi        #
 # Date Created: 23/07/2024 #
-# Last Updated: 29/07/2024 #
+# Last Updated: 14/08/2024 #
 ###########################
 
 '''
@@ -129,7 +129,7 @@ class Reports:
         # Try-Except block for setting up the reports directory
         try:
             if not os.path.isdir(self.export_report_directory):
-                os.makedirs(self.export_report_directory, exist_ok=True)
+                os.makedirs(self.export_report_directory, exist_ok = True)
                 logging.info(f"The following directory has been set up: {self.export_report_directory}")
             else:
                 logging.info(f"The following directory already exists: {self.export_report_directory}")
@@ -187,7 +187,7 @@ class Reports:
                               "-reports", "3, 9",
             ]
             
-            report_process = subprocess.run(report_command, capture_output=True, text=True, check=True)
+            report_process = subprocess.run(report_command, capture_output = True, text = True, check = True)
             
              
             self.reports_end_time = time.time()
@@ -234,11 +234,11 @@ class Reports:
                 delimiter = '\t'
 
                 # Creating a pandas Dataframe of the report(s)
-                reports_df = pd.read_csv(reports_file_path, delimiter=delimiter)
+                reports_df = pd.read_csv(reports_file_path, delimiter = delimiter)
                 
                 # Replacing the '.txt' with 'xlsx' and saving the dataframe as an Excel file
                 excel_path = os.path.join(self.export_report_directory, file.replace('.txt', '.xlsx'))
-                reports_df.to_excel(excel_path, index=False, engine='openpyxl')
+                reports_df.to_excel(excel_path, index = False, engine = "openpyxl")
                 logging.info(f"The file: {file} has been successfully converted to 'xlsx' format :{excel_path}")
 
             except Exception as e:

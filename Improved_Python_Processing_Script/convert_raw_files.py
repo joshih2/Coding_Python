@@ -1,7 +1,7 @@
 ###########################
 # F333290 - H.Joshi        #
 # Date Created: 21/06/2024 #
-# Last Updated: 25/07/2024 #
+# Last Updated: 14/08/2024 #
 ###########################
 
 '''
@@ -190,7 +190,7 @@ class ConvertRawFiles:
                 return_code = subprocess.call([self.thermo_file_parser,
                                                     "-i", os.path.join(self.raw_dir, thermo_raw),
                                                     "-b", os.path.join(self.raw_dir, raw_file)],
-                                                    universal_newlines=True)
+                                                    universal_newlines = True)
                 if return_code == 0:
                     logging.info(f"Successfully converted to {raw_file}")
                     self.raw_files.append(raw_file)

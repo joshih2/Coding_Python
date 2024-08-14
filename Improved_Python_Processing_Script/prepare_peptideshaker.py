@@ -1,7 +1,7 @@
 ###########################
 # F333290 - H.Joshi        #
 # Date Created: 08/07/2024 #
-# Last Updated: 27/07/2024 #
+# Last Updated: 14/08/2024 #
 ###########################
 
 
@@ -158,7 +158,7 @@ class PeptideShaker:
             ]
 
             
-            shaker_process = subprocess.run(shaker_command, capture_output=True, text=True, check=True)
+            shaker_process = subprocess.run(shaker_command, capture_output = True, text = True, check = True)
 
             self.shaker_end_time = time.time()
                 
