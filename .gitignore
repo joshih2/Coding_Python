@@ -1,0 +1,12 @@
+# Ignore directories within Improved_Python_Processing_Script
+Improved_Python_Processing_Script/raw/
+Improved_Python_Processing_Script/processed/
+Improved_Python_Processing_Script/searched/
+Improved_Python_Processing_Script/reports/
+
+# Ignore the log file
+dia_umpire_automation.log
+
+
+# Ignore the entire Streamlit_App folder
+Streamlit_App/
