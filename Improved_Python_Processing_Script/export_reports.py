@@ -1,7 +1,7 @@
 ###########################
 # F333290 - H.Joshi        #
 # Date Created: 23/07/2024 #
-# Last Updated: 14/08/2024 #
+# Last Updated: 19/08/2024 #
 ###########################
 
 '''
@@ -134,7 +134,7 @@ class Reports:
             else:
                 logging.info(f"The following directory already exists: {self.export_report_directory}")
         except:
-            logging.error(f"The reports directory does not exist! Please create the reports directory.")
+            logging.error("The reports directory does not exist! Please create the reports directory.")
             sys.exit(1)
 
         
@@ -192,7 +192,7 @@ class Reports:
              
             self.reports_end_time = time.time()
             
-            logging.info(f"PeptideShaker reports have been successfully exported. The requested reports can be found in the reports directory.")
+            logging.info("PeptideShaker reports have been successfully exported. The requested reports can be found in the reports directory.")
 
 
             # Creating a file called 'reports_cli_log' to log the export report process and any errors/execptions if this process fails
@@ -223,7 +223,7 @@ class Reports:
         self.export_report_directory (str) - reports directory filepath
         '''
         # Creating a list of all the reports in '.txt' format in the reports directory
-        file_list = [f for f in os.listdir(self.export_report_directory) if f.endswith('.txt')]
+        file_list = [f for f in os.listdir(self.export_report_directory) if f.endswith(".txt")]
         
         for file in file_list:
             reports_file_path = os.path.join(self.export_report_directory, file)
@@ -231,18 +231,18 @@ class Reports:
             # Try-Except block for converting the file format of the report(s)
             try:
                 # Tab Delimiter used  
-                delimiter = '\t'
+                delimiter = "\t"
 
                 # Creating a pandas Dataframe of the report(s)
                 reports_df = pd.read_csv(reports_file_path, delimiter = delimiter)
                 
                 # Replacing the '.txt' with 'xlsx' and saving the dataframe as an Excel file
-                excel_path = os.path.join(self.export_report_directory, file.replace('.txt', '.xlsx'))
+                excel_path = os.path.join(self.export_report_directory, file.replace(".txt", ".xlsx"))
                 reports_df.to_excel(excel_path, index = False, engine = "openpyxl")
                 logging.info(f"The file: {file} has been successfully converted to 'xlsx' format :{excel_path}")
 
             except Exception as e:
-                logging.error(f"Error! The file: {file} has not been converted to 'xlsx' format:{e}")
+                logging.error(f"Error! The file: {file} has not been converted to '.xlsx' format:{e}")
             
 
 
